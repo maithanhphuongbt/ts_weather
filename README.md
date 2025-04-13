@@ -1,16 +1,40 @@
-# ts_weather
+# TS Weather App
 
-A new Flutter project.
+A Flutter application that displays current weather and 4-day forecast for the user's current location using the OpenWeatherMap API.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Displays current temperature and location name
+- Shows 4-day temperature forecast with average temperatures
+- Handles various error cases gracefully
+- Allows retrying on failure
 
-A few resources to get you started if this is your first Flutter project:
+## Technical Approach
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Architecture
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The app follows Clean Architecture with Feature-first structure and BLoC for state management:
+
+1. **Presentation Layer**: Contains UI components and BLoCs
+2. **Domain Layer**: Contains business logic, entities, and use cases
+3. **Data Layer**: Handles data sources and repositories
+
+### Key Libraries
+
+- **auto_route**: For navigation management
+- **dio & retrofit**: For API calls
+- **freezed**: For immutable models and union types
+- **riverpod**: For dependency injection
+- **flutter_bloc**: For state management
+- **fpdart**: For functional programming utilities
+
+### Testing
+
+The app includes comprehensive unit tests with 100% coverage for critical components like BLoCs and use cases.
+
+## Setup
+
+1. Clone the repository
+2. Run `flutter pub get`
+5. Add your OpenWeatherMap API key in `lib/core/constants/app_constants.dart`
+6. Run the app with `flutter run`

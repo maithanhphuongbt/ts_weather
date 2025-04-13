@@ -1,0 +1,17 @@
+{
+  "status": 200,
+  "message": "Thành công!",
+  "data": {
+    "results": {
+      "is_phone_book": true,
+      "buyers": [
+        {
+          "buyer_phone": "0918000456",
+          "buyer_sendo_id": "2012722028",
+          "buyer_name": "khangbuyer_09 khangbuyer_09"
+        }
+      ]
+    }
+  },
+  "traceId": "d4cfc1b8-6c05-441c-9b54-3ec936646908"
+}
