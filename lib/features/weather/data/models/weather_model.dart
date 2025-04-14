@@ -19,8 +19,8 @@ class WeatherModel with _$WeatherModel {
 class Main with _$Main {
   const factory Main({
 	required double temp,
-	@JsonKey(name: 'temp_min') required double tempMin,
-	@JsonKey(name: 'temp_max') required double tempMax,
+	double? tempMin,
+	double? tempMax,
   }) = _Main;
 
   factory Main.fromJson(Map<String, dynamic> json) => _$MainFromJson(json);

@@ -7,8 +7,8 @@ class WeatherEntity with _$WeatherEntity {
   const factory WeatherEntity({
 	required String locationName,
 	required double currentTemp,
-	required double minTemp,
-	required double maxTemp,
+	double? minTemp,
+	double? maxTemp,
 	required String weatherCondition,
 	required String weatherDescription,
 	required String weatherIcon,

@@ -18,8 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ForecastEntity {
   DateTime get date => throw _privateConstructorUsedError;
   double get avgTemp => throw _privateConstructorUsedError;
-  double get minTemp => throw _privateConstructorUsedError;
-  double get maxTemp => throw _privateConstructorUsedError;
+  double? get minTemp => throw _privateConstructorUsedError;
+  double? get maxTemp => throw _privateConstructorUsedError;
   String get weatherCondition => throw _privateConstructorUsedError;
   String get weatherIcon => throw _privateConstructorUsedError;
 
@@ -39,8 +39,8 @@ abstract class $ForecastEntityCopyWith<$Res> {
   $Res call(
       {DateTime date,
       double avgTemp,
-      double minTemp,
-      double maxTemp,
+      double? minTemp,
+      double? maxTemp,
       String weatherCondition,
       String weatherIcon});
 }
@@ -62,8 +62,8 @@ class _$ForecastEntityCopyWithImpl<$Res, $Val extends ForecastEntity>
   $Res call({
     Object? date = null,
     Object? avgTemp = null,
-    Object? minTemp = null,
-    Object? maxTemp = null,
+    Object? minTemp = freezed,
+    Object? maxTemp = freezed,
     Object? weatherCondition = null,
     Object? weatherIcon = null,
   }) {
@@ -76,14 +76,14 @@ class _$ForecastEntityCopyWithImpl<$Res, $Val extends ForecastEntity>
           ? _value.avgTemp
           : avgTemp // ignore: cast_nullable_to_non_nullable
               as double,
-      minTemp: null == minTemp
+      minTemp: freezed == minTemp
           ? _value.minTemp
           : minTemp // ignore: cast_nullable_to_non_nullable
-              as double,
-      maxTemp: null == maxTemp
+              as double?,
+      maxTemp: freezed == maxTemp
           ? _value.maxTemp
           : maxTemp // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       weatherCondition: null == weatherCondition
           ? _value.weatherCondition
           : weatherCondition // ignore: cast_nullable_to_non_nullable
@@ -107,8 +107,8 @@ abstract class _$$ForecastEntityImplCopyWith<$Res>
   $Res call(
       {DateTime date,
       double avgTemp,
-      double minTemp,
-      double maxTemp,
+      double? minTemp,
+      double? maxTemp,
       String weatherCondition,
       String weatherIcon});
 }
@@ -128,8 +128,8 @@ class __$$ForecastEntityImplCopyWithImpl<$Res>
   $Res call({
     Object? date = null,
     Object? avgTemp = null,
-    Object? minTemp = null,
-    Object? maxTemp = null,
+    Object? minTemp = freezed,
+    Object? maxTemp = freezed,
     Object? weatherCondition = null,
     Object? weatherIcon = null,
   }) {
@@ -142,14 +142,14 @@ class __$$ForecastEntityImplCopyWithImpl<$Res>
           ? _value.avgTemp
           : avgTemp // ignore: cast_nullable_to_non_nullable
               as double,
-      minTemp: null == minTemp
+      minTemp: freezed == minTemp
           ? _value.minTemp
           : minTemp // ignore: cast_nullable_to_non_nullable
-              as double,
-      maxTemp: null == maxTemp
+              as double?,
+      maxTemp: freezed == maxTemp
           ? _value.maxTemp
           : maxTemp // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       weatherCondition: null == weatherCondition
           ? _value.weatherCondition
           : weatherCondition // ignore: cast_nullable_to_non_nullable
@@ -168,8 +168,8 @@ class _$ForecastEntityImpl implements _ForecastEntity {
   const _$ForecastEntityImpl(
       {required this.date,
       required this.avgTemp,
-      required this.minTemp,
-      required this.maxTemp,
+      this.minTemp,
+      this.maxTemp,
       required this.weatherCondition,
       required this.weatherIcon});
 
@@ -178,9 +178,9 @@ class _$ForecastEntityImpl implements _ForecastEntity {
   @override
   final double avgTemp;
   @override
-  final double minTemp;
+  final double? minTemp;
   @override
-  final double maxTemp;
+  final double? maxTemp;
   @override
   final String weatherCondition;
   @override
@@ -224,8 +224,8 @@ abstract class _ForecastEntity implements ForecastEntity {
   const factory _ForecastEntity(
       {required final DateTime date,
       required final double avgTemp,
-      required final double minTemp,
-      required final double maxTemp,
+      final double? minTemp,
+      final double? maxTemp,
       required final String weatherCondition,
       required final String weatherIcon}) = _$ForecastEntityImpl;
 
@@ -234,9 +234,9 @@ abstract class _ForecastEntity implements ForecastEntity {
   @override
   double get avgTemp;
   @override
-  double get minTemp;
+  double? get minTemp;
   @override
-  double get maxTemp;
+  double? get maxTemp;
   @override
   String get weatherCondition;
   @override

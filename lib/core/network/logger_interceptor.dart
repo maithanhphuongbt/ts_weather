@@ -14,7 +14,7 @@ void printWrapped(String text) {
 }
 
 class LoggerInterceptor extends Interceptor {
-  final Function(DioError)? onRequestError;
+  final Function(DioException)? onRequestError;
 
   //For case response data is too large, don't need to show on log
   final bool Function(Response)? ignoreResponseDataLog;
@@ -41,7 +41,7 @@ class LoggerInterceptor extends Interceptor {
   }
 
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     debugPrint('\n<===================================TS_Weather Log=======================================>');
     printWrapped(prettyJsonStr({
       'from': 'Error',

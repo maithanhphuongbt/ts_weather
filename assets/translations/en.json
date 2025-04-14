@@ -1,4 +1,4 @@
 {
-  "hello": "Hello",
-  "welcome": "Welcome, {name}!"
+  "weather_message_error": "Something went wrong at our end!",
+  "weather_button_retry": "RETRY"
 }

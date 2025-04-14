@@ -18,8 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$WeatherEntity {
   String get locationName => throw _privateConstructorUsedError;
   double get currentTemp => throw _privateConstructorUsedError;
-  double get minTemp => throw _privateConstructorUsedError;
-  double get maxTemp => throw _privateConstructorUsedError;
+  double? get minTemp => throw _privateConstructorUsedError;
+  double? get maxTemp => throw _privateConstructorUsedError;
   String get weatherCondition => throw _privateConstructorUsedError;
   String get weatherDescription => throw _privateConstructorUsedError;
   String get weatherIcon => throw _privateConstructorUsedError;
@@ -40,8 +40,8 @@ abstract class $WeatherEntityCopyWith<$Res> {
   $Res call(
       {String locationName,
       double currentTemp,
-      double minTemp,
-      double maxTemp,
+      double? minTemp,
+      double? maxTemp,
       String weatherCondition,
       String weatherDescription,
       String weatherIcon});
@@ -64,8 +64,8 @@ class _$WeatherEntityCopyWithImpl<$Res, $Val extends WeatherEntity>
   $Res call({
     Object? locationName = null,
     Object? currentTemp = null,
-    Object? minTemp = null,
-    Object? maxTemp = null,
+    Object? minTemp = freezed,
+    Object? maxTemp = freezed,
     Object? weatherCondition = null,
     Object? weatherDescription = null,
     Object? weatherIcon = null,
@@ -79,14 +79,14 @@ class _$WeatherEntityCopyWithImpl<$Res, $Val extends WeatherEntity>
           ? _value.currentTemp
           : currentTemp // ignore: cast_nullable_to_non_nullable
               as double,
-      minTemp: null == minTemp
+      minTemp: freezed == minTemp
           ? _value.minTemp
           : minTemp // ignore: cast_nullable_to_non_nullable
-              as double,
-      maxTemp: null == maxTemp
+              as double?,
+      maxTemp: freezed == maxTemp
           ? _value.maxTemp
           : maxTemp // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       weatherCondition: null == weatherCondition
           ? _value.weatherCondition
           : weatherCondition // ignore: cast_nullable_to_non_nullable
@@ -114,8 +114,8 @@ abstract class _$$WeatherEntityImplCopyWith<$Res>
   $Res call(
       {String locationName,
       double currentTemp,
-      double minTemp,
-      double maxTemp,
+      double? minTemp,
+      double? maxTemp,
       String weatherCondition,
       String weatherDescription,
       String weatherIcon});
@@ -136,8 +136,8 @@ class __$$WeatherEntityImplCopyWithImpl<$Res>
   $Res call({
     Object? locationName = null,
     Object? currentTemp = null,
-    Object? minTemp = null,
-    Object? maxTemp = null,
+    Object? minTemp = freezed,
+    Object? maxTemp = freezed,
     Object? weatherCondition = null,
     Object? weatherDescription = null,
     Object? weatherIcon = null,
@@ -151,14 +151,14 @@ class __$$WeatherEntityImplCopyWithImpl<$Res>
           ? _value.currentTemp
           : currentTemp // ignore: cast_nullable_to_non_nullable
               as double,
-      minTemp: null == minTemp
+      minTemp: freezed == minTemp
           ? _value.minTemp
           : minTemp // ignore: cast_nullable_to_non_nullable
-              as double,
-      maxTemp: null == maxTemp
+              as double?,
+      maxTemp: freezed == maxTemp
           ? _value.maxTemp
           : maxTemp // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       weatherCondition: null == weatherCondition
           ? _value.weatherCondition
           : weatherCondition // ignore: cast_nullable_to_non_nullable
@@ -181,8 +181,8 @@ class _$WeatherEntityImpl implements _WeatherEntity {
   const _$WeatherEntityImpl(
       {required this.locationName,
       required this.currentTemp,
-      required this.minTemp,
-      required this.maxTemp,
+      this.minTemp,
+      this.maxTemp,
       required this.weatherCondition,
       required this.weatherDescription,
       required this.weatherIcon});
@@ -192,9 +192,9 @@ class _$WeatherEntityImpl implements _WeatherEntity {
   @override
   final double currentTemp;
   @override
-  final double minTemp;
+  final double? minTemp;
   @override
-  final double maxTemp;
+  final double? maxTemp;
   @override
   final String weatherCondition;
   @override
@@ -243,8 +243,8 @@ abstract class _WeatherEntity implements WeatherEntity {
   const factory _WeatherEntity(
       {required final String locationName,
       required final double currentTemp,
-      required final double minTemp,
-      required final double maxTemp,
+      final double? minTemp,
+      final double? maxTemp,
       required final String weatherCondition,
       required final String weatherDescription,
       required final String weatherIcon}) = _$WeatherEntityImpl;
@@ -254,9 +254,9 @@ abstract class _WeatherEntity implements WeatherEntity {
   @override
   double get currentTemp;
   @override
-  double get minTemp;
+  double? get minTemp;
   @override
-  double get maxTemp;
+  double? get maxTemp;
   @override
   String get weatherCondition;
   @override

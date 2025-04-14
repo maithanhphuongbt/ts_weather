@@ -28,7 +28,7 @@ class _WeatherRemoteDataSource implements WeatherRemoteDataSource {
     double lat,
     double lon, {
     String units = "metric",
-    String appId = AppConstants.openWeatherApiKey,
+    String appId = AppKey.openWeatherApiKey,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -71,7 +71,7 @@ class _WeatherRemoteDataSource implements WeatherRemoteDataSource {
     double lat,
     double lon, {
     String units = "metric",
-    String appId = AppConstants.openWeatherApiKey,
+    String appId = AppKey.openWeatherApiKey,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{

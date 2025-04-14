@@ -1,98 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import 'package:ts_weather/core/extension/ts_text_style.dart';
 import 'package:ts_weather/features/weather/domain/entities/forecast_entity.dart';
 
 class ForecastListWidget extends StatelessWidget {
   final List<ForecastEntity> forecast;
+  final Locale locale;
 
-  const ForecastListWidget({super.key, required this.forecast});
+  const ForecastListWidget({super.key, required this.forecast, required this.locale});
 
   @override
   Widget build(BuildContext context) {
-	return Card(
-	  elevation: 2,
-	  shape: RoundedRectangleBorder(
-		borderRadius: BorderRadius.circular(12.r),
-	  ),
-	  child: Padding(
-		padding: EdgeInsets.all(16.w),
-		child: Column(
-		  crossAxisAlignment: CrossAxisAlignment.start,
-		  children: [
-			Text(
-			  '4-Day Forecast',
-			  style: TextStyle(
-				fontSize: 20.sp,
-				fontWeight: FontWeight.bold,
-			  ),
-			),
-			SizedBox(height: 16.h),
-			...forecast.take(4).map((day) => _buildForecastItem(day)).toList(),
-		  ],
-		),
-	  ),
-	);
+    return Expanded(
+      child: Container(
+        color: Theme.of(context).scaffoldBackgroundColor,
+        child: ListView.separated(
+          padding: EdgeInsets.symmetric(vertical: 16.sp),
+          itemCount: forecast.length,
+          separatorBuilder: (context, index) => const Divider(height: 1),
+          itemBuilder: (context, index) {
+            final item = forecast[index];
+            return _buildForecastItem(item, context);
+          },
+        ),
+      ),
+    );
   }
 
-  Widget _buildForecastItem(ForecastEntity day) {
-	return Padding(
-	  padding: EdgeInsets.symmetric(vertical: 8.h),
-	  child: Row(
-		children: [
-		  Expanded(
-			flex: 2,
-			child: Text(
-			  DateFormat('EEEE').format(day.date),
-			  style: TextStyle(
-				fontSize: 16.sp,
-				fontWeight: FontWeight.w500,
-			  ),
-			),
-		  ),
-		  Expanded(
-			flex: 1,
-			child: Image.network(
-			  'https://openweathermap.org/img/wn/${day.weatherIcon}@2x.png',
-			  width: 40.w,
-			  height: 40.h,
-			),
-		  ),
-		  Expanded(
-			flex: 2,
-			child: Text(
-			  '${day.avgTemp.round()}°C',
-			  style: TextStyle(
-				fontSize: 16.sp,
-				fontWeight: FontWeight.bold,
-			  ),
-			),
-		  ),
-		  Expanded(
-			flex: 3,
-			child: Row(
-			  mainAxisAlignment: MainAxisAlignment.end,
-			  children: [
-				Text(
-				  '${day.minTemp.round()}°',
-				  style: TextStyle(
-					fontSize: 14.sp,
-					color: Colors.grey,
-				  ),
-				),
-				SizedBox(width: 8.w),
-				Text(
-				  '${day.maxTemp.round()}°',
-				  style: TextStyle(
-					fontSize: 14.sp,
-					fontWeight: FontWeight.bold,
-				  ),
-				),
-			  ],
-			),
-		  ),
-		],
-	  ),
-	);
+  Widget _buildForecastItem(ForecastEntity day, BuildContext context) {
+    return Container(
+      height: 80.sp,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      alignment: Alignment.center,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            DateFormat('EEEE', locale == const Locale('en') ? 'en' : 'vi').format(day.date),
+            style: context.tsTextStyle.weekday,
+          ),
+          Text('${day.avgTemp.round()}°C', style: context.tsTextStyle.temperatureSmall),
+        ],
+      ),
+    );
   }
 }

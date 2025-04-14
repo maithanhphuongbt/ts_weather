@@ -3,7 +3,7 @@
 // ignore_for_file: constant_identifier_names
 
 abstract class  LocaleKeys {
-  static const hello = 'hello';
-  static const welcome = 'welcome';
+  static const weather_message_error = 'weather_message_error';
+  static const weather_button_retry = 'weather_button_retry';
 
 }

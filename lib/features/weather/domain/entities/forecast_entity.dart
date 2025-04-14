@@ -7,8 +7,8 @@ class ForecastEntity with _$ForecastEntity {
   const factory ForecastEntity({
 	required DateTime date,
 	required double avgTemp,
-	required double minTemp,
-	required double maxTemp,
+	double? minTemp,
+	double? maxTemp,
 	required String weatherCondition,
 	required String weatherIcon,
   }) = _ForecastEntity;

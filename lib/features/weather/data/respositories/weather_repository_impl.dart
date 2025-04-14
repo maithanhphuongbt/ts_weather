@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:ts_weather/core/constanst/constanst.dart';
 import 'package:ts_weather/core/error/app_exceptions.dart';
 import 'package:ts_weather/core/services/location_service.dart';
 import 'package:ts_weather/features/weather/data/datasources/weather_remote_data_source.dart';
@@ -11,19 +10,19 @@ import 'package:ts_weather/features/weather/domain/repositories/weather_reposito
 
 class WeatherRepositoryImpl implements WeatherRepository {
   final WeatherRemoteDataSource remoteDataSource;
-  WeatherRepositoryImpl({
-    required this.remoteDataSource,
-  });
+
+  WeatherRepositoryImpl({required this.remoteDataSource});
 
   @override
   Future<Either<AppException, WeatherEntity>> getCurrentWeather({double? lat, double? lon}) async {
     try {
-      final response = await (lat != null && lon != null
-        ? remoteDataSource.getCurrentWeather(lat, lon)
-        : (() async {
-        final position = await LocationService.shared.getCurrentPosition();
-        return remoteDataSource.getCurrentWeather(position.latitude, position.longitude,);
-      })());
+      final response =
+          await (lat != null && lon != null
+              ? remoteDataSource.getCurrentWeather(lat, lon)
+              : (() async {
+                final position = await LocationService().getCurrentPosition();
+                return remoteDataSource.getCurrentWeather(position.latitude, position.longitude);
+              })());
 
       return Right(_mapWeatherModelToEntity(response));
     } catch (e) {
@@ -32,15 +31,15 @@ class WeatherRepositoryImpl implements WeatherRepository {
   }
 
   @override
-  Future<Either<AppException, List<ForecastEntity>>> getWeatherForecast(
-    {double? lat, double? lon}) async {
+  Future<Either<AppException, List<ForecastEntity>>> getWeatherForecast({double? lat, double? lon}) async {
     try {
-      final response = await (lat != null && lon != null
-        ? remoteDataSource.getWeatherForecast(lat, lon)
-        : (() async {
-        final position = await LocationService.shared.getCurrentPosition();
-        return remoteDataSource.getWeatherForecast(position.latitude, position.longitude);
-      })());
+      final response =
+          await (lat != null && lon != null
+              ? remoteDataSource.getWeatherForecast(lat, lon)
+              : (() async {
+                final position = await LocationService().getCurrentPosition();
+                return remoteDataSource.getWeatherForecast(position.latitude, position.longitude);
+              })());
 
       return Right(_mapForecastModelToEntity(response));
     } catch (e) {
@@ -74,8 +73,8 @@ class WeatherRepositoryImpl implements WeatherRepository {
     return dailyForecasts.entries.map((entry) {
       final items = entry.value;
       final avgTemp = items.map((e) => e.main.temp).reduce((a, b) => a + b) / items.length;
-      final minTemp = items.map((e) => e.main.tempMin).reduce((a, b) => a < b ? a : b);
-      final maxTemp = items.map((e) => e.main.tempMax).reduce((a, b) => a > b ? a : b);
+      final minTemp = items.map((e) => e.main.tempMin).reduce((a, b) => (a ?? 0) < (b ?? 0) ? a : b);
+      final maxTemp = items.map((e) => e.main.tempMax).reduce((a, b) => (a ?? 0) < (b ?? 0) ? a : b);
 
       return ForecastEntity(
         date: entry.key,

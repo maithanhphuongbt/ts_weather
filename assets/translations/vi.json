@@ -1,4 +1,4 @@
 {
-  "hello": "Xin chào",
-  "welcome": "Chào mừng"
+  "weather_message_error": "Xin lỗi vì sự cố từ phía chúng tôi!",
+  "weather_button_retry": "Thử lại"
 }

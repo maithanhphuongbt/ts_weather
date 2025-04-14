@@ -2,13 +2,11 @@ import 'package:geolocator/geolocator.dart';
 import 'package:ts_weather/core/error/app_exceptions.dart';
 
 class LocationService {
-  static final LocationService shared = LocationService._internal();
-
-  factory LocationService() {
-    return shared;
-  }
-
   LocationService._internal();
+
+  static final LocationService _instance = LocationService._internal();
+
+  factory LocationService() => _instance;
 
   Future<Position> getCurrentPosition() async {
     bool serviceEnabled;

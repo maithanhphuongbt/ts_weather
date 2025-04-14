@@ -230,10 +230,8 @@ Main _$MainFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Main {
   double get temp => throw _privateConstructorUsedError;
-  @JsonKey(name: 'temp_min')
-  double get tempMin => throw _privateConstructorUsedError;
-  @JsonKey(name: 'temp_max')
-  double get tempMax => throw _privateConstructorUsedError;
+  double? get tempMin => throw _privateConstructorUsedError;
+  double? get tempMax => throw _privateConstructorUsedError;
 
   /// Serializes this Main to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -249,10 +247,7 @@ abstract class $MainCopyWith<$Res> {
   factory $MainCopyWith(Main value, $Res Function(Main) then) =
       _$MainCopyWithImpl<$Res, Main>;
   @useResult
-  $Res call(
-      {double temp,
-      @JsonKey(name: 'temp_min') double tempMin,
-      @JsonKey(name: 'temp_max') double tempMax});
+  $Res call({double temp, double? tempMin, double? tempMax});
 }
 
 /// @nodoc
@@ -271,22 +266,22 @@ class _$MainCopyWithImpl<$Res, $Val extends Main>
   @override
   $Res call({
     Object? temp = null,
-    Object? tempMin = null,
-    Object? tempMax = null,
+    Object? tempMin = freezed,
+    Object? tempMax = freezed,
   }) {
     return _then(_value.copyWith(
       temp: null == temp
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
               as double,
-      tempMin: null == tempMin
+      tempMin: freezed == tempMin
           ? _value.tempMin
           : tempMin // ignore: cast_nullable_to_non_nullable
-              as double,
-      tempMax: null == tempMax
+              as double?,
+      tempMax: freezed == tempMax
           ? _value.tempMax
           : tempMax // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ) as $Val);
   }
 }
@@ -298,10 +293,7 @@ abstract class _$$MainImplCopyWith<$Res> implements $MainCopyWith<$Res> {
       __$$MainImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {double temp,
-      @JsonKey(name: 'temp_min') double tempMin,
-      @JsonKey(name: 'temp_max') double tempMax});
+  $Res call({double temp, double? tempMin, double? tempMax});
 }
 
 /// @nodoc
@@ -317,22 +309,22 @@ class __$$MainImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? temp = null,
-    Object? tempMin = null,
-    Object? tempMax = null,
+    Object? tempMin = freezed,
+    Object? tempMax = freezed,
   }) {
     return _then(_$MainImpl(
       temp: null == temp
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
               as double,
-      tempMin: null == tempMin
+      tempMin: freezed == tempMin
           ? _value.tempMin
           : tempMin // ignore: cast_nullable_to_non_nullable
-              as double,
-      tempMax: null == tempMax
+              as double?,
+      tempMax: freezed == tempMax
           ? _value.tempMax
           : tempMax // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ));
   }
 }
@@ -340,10 +332,7 @@ class __$$MainImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MainImpl implements _Main {
-  const _$MainImpl(
-      {required this.temp,
-      @JsonKey(name: 'temp_min') required this.tempMin,
-      @JsonKey(name: 'temp_max') required this.tempMax});
+  const _$MainImpl({required this.temp, this.tempMin, this.tempMax});
 
   factory _$MainImpl.fromJson(Map<String, dynamic> json) =>
       _$$MainImplFromJson(json);
@@ -351,11 +340,9 @@ class _$MainImpl implements _Main {
   @override
   final double temp;
   @override
-  @JsonKey(name: 'temp_min')
-  final double tempMin;
+  final double? tempMin;
   @override
-  @JsonKey(name: 'temp_max')
-  final double tempMax;
+  final double? tempMax;
 
   @override
   String toString() {
@@ -395,19 +382,17 @@ class _$MainImpl implements _Main {
 abstract class _Main implements Main {
   const factory _Main(
       {required final double temp,
-      @JsonKey(name: 'temp_min') required final double tempMin,
-      @JsonKey(name: 'temp_max') required final double tempMax}) = _$MainImpl;
+      final double? tempMin,
+      final double? tempMax}) = _$MainImpl;
 
   factory _Main.fromJson(Map<String, dynamic> json) = _$MainImpl.fromJson;
 
   @override
   double get temp;
   @override
-  @JsonKey(name: 'temp_min')
-  double get tempMin;
+  double? get tempMin;
   @override
-  @JsonKey(name: 'temp_max')
-  double get tempMax;
+  double? get tempMax;
 
   /// Create a copy of Main
   /// with the given fields replaced by the non-null parameter values.

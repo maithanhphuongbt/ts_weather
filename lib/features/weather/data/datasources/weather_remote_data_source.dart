@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:ts_weather/core/constanst/constanst.dart';
+import 'package:ts_weather/core/constants/app_key.dart';
 import 'package:ts_weather/features/weather/data/models/weather_model.dart';
 
 part 'weather_remote_data_source.g.dart';
@@ -14,7 +14,7 @@ abstract class WeatherRemoteDataSource {
     @Query('lat') double lat,
     @Query('lon') double lon,{
       @Query('units') String units = "metric",
-      @Query('appid') String appId = AppConstants.openWeatherApiKey,
+      @Query('appid') String appId = AppKey.openWeatherApiKey,
     }
   );
 
@@ -23,6 +23,6 @@ abstract class WeatherRemoteDataSource {
     @Query('lat') double lat,
     @Query('lon') double lon, {
     @Query('units') String units = "metric",
-    @Query('appid') String appId = AppConstants.openWeatherApiKey,
+    @Query('appid') String appId = AppKey.openWeatherApiKey,
   });
 }
