@@ -1,4 +1,6 @@
 {
   "weather_message_error": "Xin lỗi vì sự cố từ phía chúng tôi!",
-  "weather_button_retry": "Thử lại"
+  "weather_button_retry": "Thử lại",
+  "title_message_error": "Thông báo",
+  "no_internet_message_error": "Không thể kết nối với Internet. Vui lòng kiểm tra kết nối mạng của bạn."
 }

@@ -24,6 +24,8 @@ mixin _$AppException {
     required TResult Function() noInternetConnection,
     required TResult Function() serverError,
     required TResult Function(String message) apiError,
+    required TResult Function() failedToLoadSettings,
+    required TResult Function() failedToUpdateThemeMode,
     required TResult Function() failedToGetWeather,
   }) =>
       throw _privateConstructorUsedError;
@@ -35,6 +37,8 @@ mixin _$AppException {
     TResult? Function()? noInternetConnection,
     TResult? Function()? serverError,
     TResult? Function(String message)? apiError,
+    TResult? Function()? failedToLoadSettings,
+    TResult? Function()? failedToUpdateThemeMode,
     TResult? Function()? failedToGetWeather,
   }) =>
       throw _privateConstructorUsedError;
@@ -46,6 +50,8 @@ mixin _$AppException {
     TResult Function()? noInternetConnection,
     TResult Function()? serverError,
     TResult Function(String message)? apiError,
+    TResult Function()? failedToLoadSettings,
+    TResult Function()? failedToUpdateThemeMode,
     TResult Function()? failedToGetWeather,
     required TResult orElse(),
   }) =>
@@ -59,6 +65,9 @@ mixin _$AppException {
     required TResult Function(NoInternetConnection value) noInternetConnection,
     required TResult Function(ServerError value) serverError,
     required TResult Function(ApiError value) apiError,
+    required TResult Function(FailedToLoadSettings value) failedToLoadSettings,
+    required TResult Function(FailedToUpdateThemeMode value)
+        failedToUpdateThemeMode,
     required TResult Function(FailedToGetWeather value) failedToGetWeather,
   }) =>
       throw _privateConstructorUsedError;
@@ -70,6 +79,8 @@ mixin _$AppException {
     TResult? Function(NoInternetConnection value)? noInternetConnection,
     TResult? Function(ServerError value)? serverError,
     TResult? Function(ApiError value)? apiError,
+    TResult? Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult? Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult? Function(FailedToGetWeather value)? failedToGetWeather,
   }) =>
       throw _privateConstructorUsedError;
@@ -81,6 +92,8 @@ mixin _$AppException {
     TResult Function(NoInternetConnection value)? noInternetConnection,
     TResult Function(ServerError value)? serverError,
     TResult Function(ApiError value)? apiError,
+    TResult Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult Function(FailedToGetWeather value)? failedToGetWeather,
     required TResult orElse(),
   }) =>
@@ -150,6 +163,8 @@ class _$LocationDeniedImpl implements LocationDenied {
     required TResult Function() noInternetConnection,
     required TResult Function() serverError,
     required TResult Function(String message) apiError,
+    required TResult Function() failedToLoadSettings,
+    required TResult Function() failedToUpdateThemeMode,
     required TResult Function() failedToGetWeather,
   }) {
     return locationDenied();
@@ -164,6 +179,8 @@ class _$LocationDeniedImpl implements LocationDenied {
     TResult? Function()? noInternetConnection,
     TResult? Function()? serverError,
     TResult? Function(String message)? apiError,
+    TResult? Function()? failedToLoadSettings,
+    TResult? Function()? failedToUpdateThemeMode,
     TResult? Function()? failedToGetWeather,
   }) {
     return locationDenied?.call();
@@ -178,6 +195,8 @@ class _$LocationDeniedImpl implements LocationDenied {
     TResult Function()? noInternetConnection,
     TResult Function()? serverError,
     TResult Function(String message)? apiError,
+    TResult Function()? failedToLoadSettings,
+    TResult Function()? failedToUpdateThemeMode,
     TResult Function()? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -197,6 +216,9 @@ class _$LocationDeniedImpl implements LocationDenied {
     required TResult Function(NoInternetConnection value) noInternetConnection,
     required TResult Function(ServerError value) serverError,
     required TResult Function(ApiError value) apiError,
+    required TResult Function(FailedToLoadSettings value) failedToLoadSettings,
+    required TResult Function(FailedToUpdateThemeMode value)
+        failedToUpdateThemeMode,
     required TResult Function(FailedToGetWeather value) failedToGetWeather,
   }) {
     return locationDenied(this);
@@ -211,6 +233,8 @@ class _$LocationDeniedImpl implements LocationDenied {
     TResult? Function(NoInternetConnection value)? noInternetConnection,
     TResult? Function(ServerError value)? serverError,
     TResult? Function(ApiError value)? apiError,
+    TResult? Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult? Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult? Function(FailedToGetWeather value)? failedToGetWeather,
   }) {
     return locationDenied?.call(this);
@@ -225,6 +249,8 @@ class _$LocationDeniedImpl implements LocationDenied {
     TResult Function(NoInternetConnection value)? noInternetConnection,
     TResult Function(ServerError value)? serverError,
     TResult Function(ApiError value)? apiError,
+    TResult Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult Function(FailedToGetWeather value)? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -283,6 +309,8 @@ class _$LocationDeniedForeverImpl implements LocationDeniedForever {
     required TResult Function() noInternetConnection,
     required TResult Function() serverError,
     required TResult Function(String message) apiError,
+    required TResult Function() failedToLoadSettings,
+    required TResult Function() failedToUpdateThemeMode,
     required TResult Function() failedToGetWeather,
   }) {
     return locationDeniedForever();
@@ -297,6 +325,8 @@ class _$LocationDeniedForeverImpl implements LocationDeniedForever {
     TResult? Function()? noInternetConnection,
     TResult? Function()? serverError,
     TResult? Function(String message)? apiError,
+    TResult? Function()? failedToLoadSettings,
+    TResult? Function()? failedToUpdateThemeMode,
     TResult? Function()? failedToGetWeather,
   }) {
     return locationDeniedForever?.call();
@@ -311,6 +341,8 @@ class _$LocationDeniedForeverImpl implements LocationDeniedForever {
     TResult Function()? noInternetConnection,
     TResult Function()? serverError,
     TResult Function(String message)? apiError,
+    TResult Function()? failedToLoadSettings,
+    TResult Function()? failedToUpdateThemeMode,
     TResult Function()? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -330,6 +362,9 @@ class _$LocationDeniedForeverImpl implements LocationDeniedForever {
     required TResult Function(NoInternetConnection value) noInternetConnection,
     required TResult Function(ServerError value) serverError,
     required TResult Function(ApiError value) apiError,
+    required TResult Function(FailedToLoadSettings value) failedToLoadSettings,
+    required TResult Function(FailedToUpdateThemeMode value)
+        failedToUpdateThemeMode,
     required TResult Function(FailedToGetWeather value) failedToGetWeather,
   }) {
     return locationDeniedForever(this);
@@ -344,6 +379,8 @@ class _$LocationDeniedForeverImpl implements LocationDeniedForever {
     TResult? Function(NoInternetConnection value)? noInternetConnection,
     TResult? Function(ServerError value)? serverError,
     TResult? Function(ApiError value)? apiError,
+    TResult? Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult? Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult? Function(FailedToGetWeather value)? failedToGetWeather,
   }) {
     return locationDeniedForever?.call(this);
@@ -358,6 +395,8 @@ class _$LocationDeniedForeverImpl implements LocationDeniedForever {
     TResult Function(NoInternetConnection value)? noInternetConnection,
     TResult Function(ServerError value)? serverError,
     TResult Function(ApiError value)? apiError,
+    TResult Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult Function(FailedToGetWeather value)? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -415,6 +454,8 @@ class _$LocationNotAvailableImpl implements LocationNotAvailable {
     required TResult Function() noInternetConnection,
     required TResult Function() serverError,
     required TResult Function(String message) apiError,
+    required TResult Function() failedToLoadSettings,
+    required TResult Function() failedToUpdateThemeMode,
     required TResult Function() failedToGetWeather,
   }) {
     return locationNotAvailable();
@@ -429,6 +470,8 @@ class _$LocationNotAvailableImpl implements LocationNotAvailable {
     TResult? Function()? noInternetConnection,
     TResult? Function()? serverError,
     TResult? Function(String message)? apiError,
+    TResult? Function()? failedToLoadSettings,
+    TResult? Function()? failedToUpdateThemeMode,
     TResult? Function()? failedToGetWeather,
   }) {
     return locationNotAvailable?.call();
@@ -443,6 +486,8 @@ class _$LocationNotAvailableImpl implements LocationNotAvailable {
     TResult Function()? noInternetConnection,
     TResult Function()? serverError,
     TResult Function(String message)? apiError,
+    TResult Function()? failedToLoadSettings,
+    TResult Function()? failedToUpdateThemeMode,
     TResult Function()? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -462,6 +507,9 @@ class _$LocationNotAvailableImpl implements LocationNotAvailable {
     required TResult Function(NoInternetConnection value) noInternetConnection,
     required TResult Function(ServerError value) serverError,
     required TResult Function(ApiError value) apiError,
+    required TResult Function(FailedToLoadSettings value) failedToLoadSettings,
+    required TResult Function(FailedToUpdateThemeMode value)
+        failedToUpdateThemeMode,
     required TResult Function(FailedToGetWeather value) failedToGetWeather,
   }) {
     return locationNotAvailable(this);
@@ -476,6 +524,8 @@ class _$LocationNotAvailableImpl implements LocationNotAvailable {
     TResult? Function(NoInternetConnection value)? noInternetConnection,
     TResult? Function(ServerError value)? serverError,
     TResult? Function(ApiError value)? apiError,
+    TResult? Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult? Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult? Function(FailedToGetWeather value)? failedToGetWeather,
   }) {
     return locationNotAvailable?.call(this);
@@ -490,6 +540,8 @@ class _$LocationNotAvailableImpl implements LocationNotAvailable {
     TResult Function(NoInternetConnection value)? noInternetConnection,
     TResult Function(ServerError value)? serverError,
     TResult Function(ApiError value)? apiError,
+    TResult Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult Function(FailedToGetWeather value)? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -547,6 +599,8 @@ class _$NoInternetConnectionImpl implements NoInternetConnection {
     required TResult Function() noInternetConnection,
     required TResult Function() serverError,
     required TResult Function(String message) apiError,
+    required TResult Function() failedToLoadSettings,
+    required TResult Function() failedToUpdateThemeMode,
     required TResult Function() failedToGetWeather,
   }) {
     return noInternetConnection();
@@ -561,6 +615,8 @@ class _$NoInternetConnectionImpl implements NoInternetConnection {
     TResult? Function()? noInternetConnection,
     TResult? Function()? serverError,
     TResult? Function(String message)? apiError,
+    TResult? Function()? failedToLoadSettings,
+    TResult? Function()? failedToUpdateThemeMode,
     TResult? Function()? failedToGetWeather,
   }) {
     return noInternetConnection?.call();
@@ -575,6 +631,8 @@ class _$NoInternetConnectionImpl implements NoInternetConnection {
     TResult Function()? noInternetConnection,
     TResult Function()? serverError,
     TResult Function(String message)? apiError,
+    TResult Function()? failedToLoadSettings,
+    TResult Function()? failedToUpdateThemeMode,
     TResult Function()? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -594,6 +652,9 @@ class _$NoInternetConnectionImpl implements NoInternetConnection {
     required TResult Function(NoInternetConnection value) noInternetConnection,
     required TResult Function(ServerError value) serverError,
     required TResult Function(ApiError value) apiError,
+    required TResult Function(FailedToLoadSettings value) failedToLoadSettings,
+    required TResult Function(FailedToUpdateThemeMode value)
+        failedToUpdateThemeMode,
     required TResult Function(FailedToGetWeather value) failedToGetWeather,
   }) {
     return noInternetConnection(this);
@@ -608,6 +669,8 @@ class _$NoInternetConnectionImpl implements NoInternetConnection {
     TResult? Function(NoInternetConnection value)? noInternetConnection,
     TResult? Function(ServerError value)? serverError,
     TResult? Function(ApiError value)? apiError,
+    TResult? Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult? Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult? Function(FailedToGetWeather value)? failedToGetWeather,
   }) {
     return noInternetConnection?.call(this);
@@ -622,6 +685,8 @@ class _$NoInternetConnectionImpl implements NoInternetConnection {
     TResult Function(NoInternetConnection value)? noInternetConnection,
     TResult Function(ServerError value)? serverError,
     TResult Function(ApiError value)? apiError,
+    TResult Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult Function(FailedToGetWeather value)? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -678,6 +743,8 @@ class _$ServerErrorImpl implements ServerError {
     required TResult Function() noInternetConnection,
     required TResult Function() serverError,
     required TResult Function(String message) apiError,
+    required TResult Function() failedToLoadSettings,
+    required TResult Function() failedToUpdateThemeMode,
     required TResult Function() failedToGetWeather,
   }) {
     return serverError();
@@ -692,6 +759,8 @@ class _$ServerErrorImpl implements ServerError {
     TResult? Function()? noInternetConnection,
     TResult? Function()? serverError,
     TResult? Function(String message)? apiError,
+    TResult? Function()? failedToLoadSettings,
+    TResult? Function()? failedToUpdateThemeMode,
     TResult? Function()? failedToGetWeather,
   }) {
     return serverError?.call();
@@ -706,6 +775,8 @@ class _$ServerErrorImpl implements ServerError {
     TResult Function()? noInternetConnection,
     TResult Function()? serverError,
     TResult Function(String message)? apiError,
+    TResult Function()? failedToLoadSettings,
+    TResult Function()? failedToUpdateThemeMode,
     TResult Function()? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -725,6 +796,9 @@ class _$ServerErrorImpl implements ServerError {
     required TResult Function(NoInternetConnection value) noInternetConnection,
     required TResult Function(ServerError value) serverError,
     required TResult Function(ApiError value) apiError,
+    required TResult Function(FailedToLoadSettings value) failedToLoadSettings,
+    required TResult Function(FailedToUpdateThemeMode value)
+        failedToUpdateThemeMode,
     required TResult Function(FailedToGetWeather value) failedToGetWeather,
   }) {
     return serverError(this);
@@ -739,6 +813,8 @@ class _$ServerErrorImpl implements ServerError {
     TResult? Function(NoInternetConnection value)? noInternetConnection,
     TResult? Function(ServerError value)? serverError,
     TResult? Function(ApiError value)? apiError,
+    TResult? Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult? Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult? Function(FailedToGetWeather value)? failedToGetWeather,
   }) {
     return serverError?.call(this);
@@ -753,6 +829,8 @@ class _$ServerErrorImpl implements ServerError {
     TResult Function(NoInternetConnection value)? noInternetConnection,
     TResult Function(ServerError value)? serverError,
     TResult Function(ApiError value)? apiError,
+    TResult Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult Function(FailedToGetWeather value)? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -836,6 +914,8 @@ class _$ApiErrorImpl implements ApiError {
     required TResult Function() noInternetConnection,
     required TResult Function() serverError,
     required TResult Function(String message) apiError,
+    required TResult Function() failedToLoadSettings,
+    required TResult Function() failedToUpdateThemeMode,
     required TResult Function() failedToGetWeather,
   }) {
     return apiError(message);
@@ -850,6 +930,8 @@ class _$ApiErrorImpl implements ApiError {
     TResult? Function()? noInternetConnection,
     TResult? Function()? serverError,
     TResult? Function(String message)? apiError,
+    TResult? Function()? failedToLoadSettings,
+    TResult? Function()? failedToUpdateThemeMode,
     TResult? Function()? failedToGetWeather,
   }) {
     return apiError?.call(message);
@@ -864,6 +946,8 @@ class _$ApiErrorImpl implements ApiError {
     TResult Function()? noInternetConnection,
     TResult Function()? serverError,
     TResult Function(String message)? apiError,
+    TResult Function()? failedToLoadSettings,
+    TResult Function()? failedToUpdateThemeMode,
     TResult Function()? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -883,6 +967,9 @@ class _$ApiErrorImpl implements ApiError {
     required TResult Function(NoInternetConnection value) noInternetConnection,
     required TResult Function(ServerError value) serverError,
     required TResult Function(ApiError value) apiError,
+    required TResult Function(FailedToLoadSettings value) failedToLoadSettings,
+    required TResult Function(FailedToUpdateThemeMode value)
+        failedToUpdateThemeMode,
     required TResult Function(FailedToGetWeather value) failedToGetWeather,
   }) {
     return apiError(this);
@@ -897,6 +984,8 @@ class _$ApiErrorImpl implements ApiError {
     TResult? Function(NoInternetConnection value)? noInternetConnection,
     TResult? Function(ServerError value)? serverError,
     TResult? Function(ApiError value)? apiError,
+    TResult? Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult? Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult? Function(FailedToGetWeather value)? failedToGetWeather,
   }) {
     return apiError?.call(this);
@@ -911,6 +1000,8 @@ class _$ApiErrorImpl implements ApiError {
     TResult Function(NoInternetConnection value)? noInternetConnection,
     TResult Function(ServerError value)? serverError,
     TResult Function(ApiError value)? apiError,
+    TResult Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult Function(FailedToGetWeather value)? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -931,6 +1022,298 @@ abstract class ApiError implements AppException {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApiErrorImplCopyWith<_$ApiErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FailedToLoadSettingsImplCopyWith<$Res> {
+  factory _$$FailedToLoadSettingsImplCopyWith(_$FailedToLoadSettingsImpl value,
+          $Res Function(_$FailedToLoadSettingsImpl) then) =
+      __$$FailedToLoadSettingsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FailedToLoadSettingsImplCopyWithImpl<$Res>
+    extends _$AppExceptionCopyWithImpl<$Res, _$FailedToLoadSettingsImpl>
+    implements _$$FailedToLoadSettingsImplCopyWith<$Res> {
+  __$$FailedToLoadSettingsImplCopyWithImpl(_$FailedToLoadSettingsImpl _value,
+      $Res Function(_$FailedToLoadSettingsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppException
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$FailedToLoadSettingsImpl implements FailedToLoadSettings {
+  const _$FailedToLoadSettingsImpl();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailedToLoadSettingsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() locationDenied,
+    required TResult Function() locationDeniedForever,
+    required TResult Function() locationNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function() serverError,
+    required TResult Function(String message) apiError,
+    required TResult Function() failedToLoadSettings,
+    required TResult Function() failedToUpdateThemeMode,
+    required TResult Function() failedToGetWeather,
+  }) {
+    return failedToLoadSettings();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? locationDenied,
+    TResult? Function()? locationDeniedForever,
+    TResult? Function()? locationNotAvailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? serverError,
+    TResult? Function(String message)? apiError,
+    TResult? Function()? failedToLoadSettings,
+    TResult? Function()? failedToUpdateThemeMode,
+    TResult? Function()? failedToGetWeather,
+  }) {
+    return failedToLoadSettings?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? locationDenied,
+    TResult Function()? locationDeniedForever,
+    TResult Function()? locationNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function()? serverError,
+    TResult Function(String message)? apiError,
+    TResult Function()? failedToLoadSettings,
+    TResult Function()? failedToUpdateThemeMode,
+    TResult Function()? failedToGetWeather,
+    required TResult orElse(),
+  }) {
+    if (failedToLoadSettings != null) {
+      return failedToLoadSettings();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LocationDenied value) locationDenied,
+    required TResult Function(LocationDeniedForever value)
+        locationDeniedForever,
+    required TResult Function(LocationNotAvailable value) locationNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ApiError value) apiError,
+    required TResult Function(FailedToLoadSettings value) failedToLoadSettings,
+    required TResult Function(FailedToUpdateThemeMode value)
+        failedToUpdateThemeMode,
+    required TResult Function(FailedToGetWeather value) failedToGetWeather,
+  }) {
+    return failedToLoadSettings(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LocationDenied value)? locationDenied,
+    TResult? Function(LocationDeniedForever value)? locationDeniedForever,
+    TResult? Function(LocationNotAvailable value)? locationNotAvailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(ApiError value)? apiError,
+    TResult? Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult? Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
+    TResult? Function(FailedToGetWeather value)? failedToGetWeather,
+  }) {
+    return failedToLoadSettings?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LocationDenied value)? locationDenied,
+    TResult Function(LocationDeniedForever value)? locationDeniedForever,
+    TResult Function(LocationNotAvailable value)? locationNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ApiError value)? apiError,
+    TResult Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
+    TResult Function(FailedToGetWeather value)? failedToGetWeather,
+    required TResult orElse(),
+  }) {
+    if (failedToLoadSettings != null) {
+      return failedToLoadSettings(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FailedToLoadSettings implements AppException {
+  const factory FailedToLoadSettings() = _$FailedToLoadSettingsImpl;
+}
+
+/// @nodoc
+abstract class _$$FailedToUpdateThemeModeImplCopyWith<$Res> {
+  factory _$$FailedToUpdateThemeModeImplCopyWith(
+          _$FailedToUpdateThemeModeImpl value,
+          $Res Function(_$FailedToUpdateThemeModeImpl) then) =
+      __$$FailedToUpdateThemeModeImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FailedToUpdateThemeModeImplCopyWithImpl<$Res>
+    extends _$AppExceptionCopyWithImpl<$Res, _$FailedToUpdateThemeModeImpl>
+    implements _$$FailedToUpdateThemeModeImplCopyWith<$Res> {
+  __$$FailedToUpdateThemeModeImplCopyWithImpl(
+      _$FailedToUpdateThemeModeImpl _value,
+      $Res Function(_$FailedToUpdateThemeModeImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppException
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$FailedToUpdateThemeModeImpl implements FailedToUpdateThemeMode {
+  const _$FailedToUpdateThemeModeImpl();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailedToUpdateThemeModeImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() locationDenied,
+    required TResult Function() locationDeniedForever,
+    required TResult Function() locationNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function() serverError,
+    required TResult Function(String message) apiError,
+    required TResult Function() failedToLoadSettings,
+    required TResult Function() failedToUpdateThemeMode,
+    required TResult Function() failedToGetWeather,
+  }) {
+    return failedToUpdateThemeMode();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? locationDenied,
+    TResult? Function()? locationDeniedForever,
+    TResult? Function()? locationNotAvailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? serverError,
+    TResult? Function(String message)? apiError,
+    TResult? Function()? failedToLoadSettings,
+    TResult? Function()? failedToUpdateThemeMode,
+    TResult? Function()? failedToGetWeather,
+  }) {
+    return failedToUpdateThemeMode?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? locationDenied,
+    TResult Function()? locationDeniedForever,
+    TResult Function()? locationNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function()? serverError,
+    TResult Function(String message)? apiError,
+    TResult Function()? failedToLoadSettings,
+    TResult Function()? failedToUpdateThemeMode,
+    TResult Function()? failedToGetWeather,
+    required TResult orElse(),
+  }) {
+    if (failedToUpdateThemeMode != null) {
+      return failedToUpdateThemeMode();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LocationDenied value) locationDenied,
+    required TResult Function(LocationDeniedForever value)
+        locationDeniedForever,
+    required TResult Function(LocationNotAvailable value) locationNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ApiError value) apiError,
+    required TResult Function(FailedToLoadSettings value) failedToLoadSettings,
+    required TResult Function(FailedToUpdateThemeMode value)
+        failedToUpdateThemeMode,
+    required TResult Function(FailedToGetWeather value) failedToGetWeather,
+  }) {
+    return failedToUpdateThemeMode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LocationDenied value)? locationDenied,
+    TResult? Function(LocationDeniedForever value)? locationDeniedForever,
+    TResult? Function(LocationNotAvailable value)? locationNotAvailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(ApiError value)? apiError,
+    TResult? Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult? Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
+    TResult? Function(FailedToGetWeather value)? failedToGetWeather,
+  }) {
+    return failedToUpdateThemeMode?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LocationDenied value)? locationDenied,
+    TResult Function(LocationDeniedForever value)? locationDeniedForever,
+    TResult Function(LocationNotAvailable value)? locationNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ApiError value)? apiError,
+    TResult Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
+    TResult Function(FailedToGetWeather value)? failedToGetWeather,
+    required TResult orElse(),
+  }) {
+    if (failedToUpdateThemeMode != null) {
+      return failedToUpdateThemeMode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FailedToUpdateThemeMode implements AppException {
+  const factory FailedToUpdateThemeMode() = _$FailedToUpdateThemeModeImpl;
 }
 
 /// @nodoc
@@ -975,6 +1358,8 @@ class _$FailedToGetWeatherImpl implements FailedToGetWeather {
     required TResult Function() noInternetConnection,
     required TResult Function() serverError,
     required TResult Function(String message) apiError,
+    required TResult Function() failedToLoadSettings,
+    required TResult Function() failedToUpdateThemeMode,
     required TResult Function() failedToGetWeather,
   }) {
     return failedToGetWeather();
@@ -989,6 +1374,8 @@ class _$FailedToGetWeatherImpl implements FailedToGetWeather {
     TResult? Function()? noInternetConnection,
     TResult? Function()? serverError,
     TResult? Function(String message)? apiError,
+    TResult? Function()? failedToLoadSettings,
+    TResult? Function()? failedToUpdateThemeMode,
     TResult? Function()? failedToGetWeather,
   }) {
     return failedToGetWeather?.call();
@@ -1003,6 +1390,8 @@ class _$FailedToGetWeatherImpl implements FailedToGetWeather {
     TResult Function()? noInternetConnection,
     TResult Function()? serverError,
     TResult Function(String message)? apiError,
+    TResult Function()? failedToLoadSettings,
+    TResult Function()? failedToUpdateThemeMode,
     TResult Function()? failedToGetWeather,
     required TResult orElse(),
   }) {
@@ -1022,6 +1411,9 @@ class _$FailedToGetWeatherImpl implements FailedToGetWeather {
     required TResult Function(NoInternetConnection value) noInternetConnection,
     required TResult Function(ServerError value) serverError,
     required TResult Function(ApiError value) apiError,
+    required TResult Function(FailedToLoadSettings value) failedToLoadSettings,
+    required TResult Function(FailedToUpdateThemeMode value)
+        failedToUpdateThemeMode,
     required TResult Function(FailedToGetWeather value) failedToGetWeather,
   }) {
     return failedToGetWeather(this);
@@ -1036,6 +1428,8 @@ class _$FailedToGetWeatherImpl implements FailedToGetWeather {
     TResult? Function(NoInternetConnection value)? noInternetConnection,
     TResult? Function(ServerError value)? serverError,
     TResult? Function(ApiError value)? apiError,
+    TResult? Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult? Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult? Function(FailedToGetWeather value)? failedToGetWeather,
   }) {
     return failedToGetWeather?.call(this);
@@ -1050,6 +1444,8 @@ class _$FailedToGetWeatherImpl implements FailedToGetWeather {
     TResult Function(NoInternetConnection value)? noInternetConnection,
     TResult Function(ServerError value)? serverError,
     TResult Function(ApiError value)? apiError,
+    TResult Function(FailedToLoadSettings value)? failedToLoadSettings,
+    TResult Function(FailedToUpdateThemeMode value)? failedToUpdateThemeMode,
     TResult Function(FailedToGetWeather value)? failedToGetWeather,
     required TResult orElse(),
   }) {

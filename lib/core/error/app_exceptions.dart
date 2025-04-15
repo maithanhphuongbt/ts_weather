@@ -14,6 +14,10 @@ class AppException with _$AppException {
   const factory AppException.serverError() = ServerError;
   const factory AppException.apiError(String message) = ApiError;
 
+  // Settings
+  const factory AppException.failedToLoadSettings() = FailedToLoadSettings;
+  const factory AppException.failedToUpdateThemeMode() = FailedToUpdateThemeMode;
+
   // Weather
   const factory AppException.failedToGetWeather() = FailedToGetWeather;
 
@@ -26,6 +30,8 @@ class AppException with _$AppException {
 	  noInternetConnection: () => 'No internet connection',
 	  serverError: () => 'Server error',
 	  apiError: (message) => message,
+    failedToLoadSettings: () => 'Failed to load settings',
+    failedToUpdateThemeMode: () => 'Failed to update theme mode',
 	  failedToGetWeather: () => 'Failed to get weather data',
 	);
   }

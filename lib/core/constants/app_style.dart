@@ -81,6 +81,22 @@ class AppStyle {
         height: 1.2,
         letterSpacing: 0,
       ),
+      titleAlertDialog: TextStyle(
+        fontSize: 14.sp,
+        fontFamily: 'Roboto',
+        fontWeight: FontWeight.bold, // Regular
+        color: isDarkMode ? appWhite2 : appBlack1,
+        height: 1.2,
+        letterSpacing: 0,
+      ),
+      contentAlertDialog: TextStyle(
+        fontSize: 14.sp,
+        fontFamily: 'Roboto',
+        fontWeight: FontWeight.normal, // Regular
+        color: isDarkMode ? appWhite2 : appBlack1,
+        height: 1.2,
+        letterSpacing: 0,
+      ),
     );
   }
 }

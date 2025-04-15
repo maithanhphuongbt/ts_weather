@@ -14,11 +14,21 @@ class ForecastListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        color: Theme.of(context).scaffoldBackgroundColor,
+        decoration: BoxDecoration(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withValues(alpha: 0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
         child: ListView.separated(
           padding: EdgeInsets.symmetric(vertical: 16.sp),
-          itemCount: forecast.length,
-          separatorBuilder: (context, index) => const Divider(height: 1),
+          itemCount: 4,
+          separatorBuilder: (context, index) => const Divider(thickness: 0.5),
           itemBuilder: (context, index) {
             final item = forecast[index];
             return _buildForecastItem(item, context);

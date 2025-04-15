@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:ts_weather/core/extension/ts_text_style.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:ts_weather/generated/locale_keys.g.dart';
 
 class NoInternetBanner extends StatelessWidget {
   const NoInternetBanner({super.key});
@@ -11,12 +15,21 @@ class NoInternetBanner extends StatelessWidget {
       right: 0,
       bottom: 0,
       child: Container(
-        color: Colors.red,
-        padding: const EdgeInsets.all(8.0),
-        child: const Text(
-          'No internet connection',
-          style: TextStyle(color: Colors.white),
-          textAlign: TextAlign.center,
+        color: Colors.grey,
+        child: CupertinoAlertDialog(
+          title: Text(
+            LocaleKeys.title_message_error.tr(),
+            style: context.tsTextStyle.titleAlertDialog,
+            textAlign: TextAlign.center,
+          ),
+          content: Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text(
+              LocaleKeys.no_internet_message_error.tr(),
+              style: context.tsTextStyle.contentAlertDialog,
+              textAlign: TextAlign.start,
+            ),
+          ),
         ),
       ),
     );

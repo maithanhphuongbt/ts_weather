@@ -1,4 +1,6 @@
 {
   "weather_message_error": "Something went wrong at our end!",
-  "weather_button_retry": "RETRY"
+  "weather_button_retry": "RETRY",
+  "title_message_error": "Error",
+  "no_internet_message_error": "You are not connected to the internet!"
 }

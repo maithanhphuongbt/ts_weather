@@ -11,17 +11,19 @@ class CurrentWeatherWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: context.tsColor.currentWeatherBackground,
-      padding: EdgeInsets.symmetric(horizontal: 16.sp),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(height: 56.sp),
-          Text('${weather.currentTemp.round()}°', style: context.tsTextStyle.temperatureLarge),
-          Text(weather.locationName, style: context.tsTextStyle.cityName),
-          SizedBox(height: 62.sp),
-        ],
+    return Flexible(
+      child: Container(
+        color: context.tsColor.currentWeatherBackground,
+        padding: EdgeInsets.symmetric(horizontal: 16.sp),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 56.sp),
+            Text('${weather.currentTemp.round()}°', style: context.tsTextStyle.temperatureLarge),
+            Text(weather.locationName, style: context.tsTextStyle.cityName),
+            SizedBox(height: 62.sp),
+          ],
+        ),
       ),
     );
   }

@@ -21,6 +21,8 @@ class TSTextTheme extends ThemeExtension<TSTextTheme> {
   final TextStyle temperatureSmall;
   final TextStyle errorMessage;
   final TextStyle retryButton;
+  final TextStyle titleAlertDialog;
+  final TextStyle contentAlertDialog;
 
   const TSTextTheme({
     required this.temperatureLarge,
@@ -29,6 +31,8 @@ class TSTextTheme extends ThemeExtension<TSTextTheme> {
     required this.temperatureSmall,
     required this.errorMessage,
     required this.retryButton,
+    required this.titleAlertDialog,
+    required this.contentAlertDialog,
   });
 
   @override
@@ -39,6 +43,8 @@ class TSTextTheme extends ThemeExtension<TSTextTheme> {
     TextStyle? temperatureSmall,
     TextStyle? errorMessage,
     TextStyle? retryButton,
+    TextStyle? titleAlertDialog,
+    TextStyle? contentAlertDialog,
   }) {
     return TSTextTheme(
       temperatureLarge: temperatureLarge ?? this.temperatureLarge,
@@ -47,6 +53,8 @@ class TSTextTheme extends ThemeExtension<TSTextTheme> {
       temperatureSmall: temperatureSmall ?? this.temperatureSmall,
       errorMessage: errorMessage ?? this.errorMessage,
       retryButton: retryButton ?? this.retryButton,
+      titleAlertDialog: titleAlertDialog ?? this.titleAlertDialog,
+      contentAlertDialog: contentAlertDialog ?? this.contentAlertDialog,
     );
   }
 
@@ -62,6 +70,8 @@ class TSTextTheme extends ThemeExtension<TSTextTheme> {
       temperatureSmall: TextStyle.lerp(temperatureSmall, other.temperatureSmall, t)!,
       errorMessage: TextStyle.lerp(errorMessage, other.errorMessage, t)!,
       retryButton: TextStyle.lerp(retryButton, other.retryButton, t)!,
+      titleAlertDialog: TextStyle.lerp(titleAlertDialog, other.titleAlertDialog, t)!,
+      contentAlertDialog: TextStyle.lerp(contentAlertDialog, other.contentAlertDialog, t)!,
     );
   }
 }
