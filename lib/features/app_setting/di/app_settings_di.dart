@@ -7,7 +7,7 @@ import 'package:ts_weather/features/app_setting/domain/usecases/watching_connect
 import 'package:ts_weather/features/app_setting/presentation/blocs/app_settings_bloc.dart';
 
 // **Repository**
-final appSettingRepositoryProvider = Provider<AppSettingsRepository>((ref) {
+final appSettingRepositoryProvider = Provider.autoDispose<AppSettingsRepository>((ref) {
   return AppSettingsRepositoryImpl(
     connectivity: ref.watch(connectivityProvider),
     prefs: ref.watch(sharedPreferencesProvider),
@@ -15,11 +15,11 @@ final appSettingRepositoryProvider = Provider<AppSettingsRepository>((ref) {
 });
 
 // **Use Case**
-final updateThemeProvider = Provider<UpdateTheme>((ref) {
+final updateThemeProvider = Provider.autoDispose<UpdateTheme>((ref) {
   return UpdateTheme(ref.watch(appSettingRepositoryProvider));
 });
 
-final watchingConnectionProvider = Provider<WatchingConnection>((ref) {
+final watchingConnectionProvider = Provider.autoDispose<WatchingConnection>((ref) {
   return WatchingConnection(ref.watch(appSettingRepositoryProvider));
 });
 
