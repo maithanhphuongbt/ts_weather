@@ -49,4 +49,20 @@ flutter:
     - assets/images/
     - assets/mock_data_test/
     - assets/translations/
+  fonts:
+    - family: RobotoThin
+      fonts:
+        - asset: fonts/Roboto-Thin.ttf
+    - family: RobotoRegular
+      fonts:
+        - asset: fonts/Roboto-Regular.ttf
+    - family: RobotoMedium
+      fonts:
+        - asset: fonts/Roboto-Medium.ttf
+    - family: RobotoBold
+      fonts:
+        - asset: fonts/Roboto-Bold.ttf
+    - family: RobotoBlack
+      fonts:
+        - asset: fonts/Roboto-Black.ttf
   generate: true

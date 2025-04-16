@@ -10,7 +10,9 @@ import 'package:ts_weather/features/app_setting/domain/usecases/update_theme.dar
 import 'package:ts_weather/features/app_setting/domain/usecases/watching_connection.dart';
 
 part 'app_settings_bloc.freezed.dart';
+
 part 'app_settings_event.dart';
+
 part 'app_settings_state.dart';
 
 class AppSettingsBloc extends Bloc<AppSettingsEvent, AppSettingsState> {
@@ -18,16 +20,15 @@ class AppSettingsBloc extends Bloc<AppSettingsEvent, AppSettingsState> {
   final WatchingConnection _watchingConnection;
   late final StreamSubscription<Either<AppException, AppSettingsEntity>> _settingsSub;
 
-  AppSettingsBloc(this._updateTheme, this._watchingConnection)
-      : super(AppSettingsState.initial()) {
+  AppSettingsBloc(this._updateTheme, this._watchingConnection) : super(AppSettingsState.initial()) {
     on<_LoadSuccess>(_onLoadSuccess);
     on<_LoadFailure>(_onLoadFailure);
     on<ThemeChanged>(_onThemeChanged);
 
     _settingsSub = _watchingConnection.execute().listen((either) {
       either.fold(
-            (failure) => add(AppSettingsEvent.loadFailure(failure)),
-            (settings) => add(AppSettingsEvent.loadSuccess(settings)),
+        (failure) => add(AppSettingsEvent.loadFailure(failure)),
+        (settings) => add(AppSettingsEvent.loadSuccess(settings)),
       );
     });
   }
@@ -37,10 +38,7 @@ class AppSettingsBloc extends Bloc<AppSettingsEvent, AppSettingsState> {
   }
 
   void _onLoadSuccess(_LoadSuccess event, Emitter<AppSettingsState> emit) {
-    emit(AppSettingsState(
-      themeMode: event.settings.themeMode,
-      hasInternet: event.settings.isConnected,
-    ));
+    emit(AppSettingsState(themeMode: event.settings.themeMode, hasInternet: event.settings.isConnected));
   }
 
   void _onLoadFailure(_LoadFailure event, Emitter<AppSettingsState> emit) {
@@ -53,4 +51,3 @@ class AppSettingsBloc extends Bloc<AppSettingsEvent, AppSettingsState> {
     return super.close();
   }
 }
-

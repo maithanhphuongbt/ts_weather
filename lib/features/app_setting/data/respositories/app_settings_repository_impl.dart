@@ -13,20 +13,16 @@ class AppSettingsRepositoryImpl implements AppSettingsRepository {
   final SharedPreferences _prefs;
   final StreamController<Either<AppException, AppSettingsEntity>> _controller;
 
-  AppSettingsRepositoryImpl({
-    required Connectivity connectivity,
-    required SharedPreferences prefs,
-  })  : _connectivity = connectivity,
-        _prefs = prefs,
-        _controller = StreamController.broadcast() {
+  AppSettingsRepositoryImpl({required Connectivity connectivity, required SharedPreferences prefs})
+    : _connectivity = connectivity,
+      _prefs = prefs,
+      _controller = StreamController.broadcast() {
     _init();
   }
 
   Future<void> _init() async {
     _controller.add(await _getCurrentSettings());
-    _connectivity.onConnectivityChanged.listen(
-            (_) async => _controller.add(await _getCurrentSettings()),
-    );
+    _connectivity.onConnectivityChanged.listen((_) async => _controller.add(await _getCurrentSettings()));
   }
 
   @override
@@ -34,26 +30,17 @@ class AppSettingsRepositoryImpl implements AppSettingsRepository {
 
   @override
   TaskEither<AppException, Unit> updateThemeMode(ThemeMode mode) {
-    return TaskEither.tryCatch(
-          () async {
-        await _prefs.setInt('theme_mode', mode.index);
-        _controller.add(await _getCurrentSettings());
-        return unit;
-      },
-          (error, _) => const AppException.failedToUpdateThemeMode(),
-    );
+    return TaskEither.tryCatch(() async {
+      await _prefs.setInt('theme_mode', mode.index);
+      _controller.add(await _getCurrentSettings());
+      return unit;
+    }, (error, _) => const AppException.failedToUpdateThemeMode());
   }
 
   Future<Either<AppException, AppSettingsEntity>> _getCurrentSettings() async {
-    return TaskEither.tryCatch(
-          () async {
-        return AppSettingsEntity(
-          themeMode: _getSavedTheme(),
-          isConnected: await _checkConnection(),
-        );
-      },
-          (error, _) => const AppException.failedToLoadSettings(),
-    ).run();
+    return TaskEither.tryCatch(() async {
+      return AppSettingsEntity(themeMode: _getSavedTheme(), isConnected: await _checkConnection());
+    }, (error, _) => const AppException.failedToLoadSettings()).run();
   }
 
   ThemeMode _getSavedTheme() {
@@ -70,6 +57,5 @@ class AppSettingsRepositoryImpl implements AppSettingsRepository {
     }
   }
 
-  @override
   Future<void> dispose() async => _controller.close();
 }

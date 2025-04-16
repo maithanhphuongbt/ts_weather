@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 /// );
 
 extension TSTextStyle on BuildContext {
-  TSTextTheme get tsTextStyle =>
-      Theme.of(this).extension<TSTextTheme>()!;
+  TSTextTheme get tsTextStyle => Theme.of(this).extension<TSTextTheme>()!;
 }
 
 @immutable

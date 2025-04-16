@@ -5,5 +5,6 @@ import 'package:ts_weather/features/app_setting/domain/entities/app_settings_ent
 
 abstract class AppSettingsRepository {
   Stream<Either<AppException, AppSettingsEntity>> watchSettings();
+
   TaskEither<AppException, Unit> updateThemeMode(ThemeMode mode);
 }

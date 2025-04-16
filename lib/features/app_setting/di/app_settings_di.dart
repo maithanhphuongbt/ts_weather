@@ -6,7 +6,7 @@ import 'package:ts_weather/features/app_setting/domain/usecases/update_theme.dar
 import 'package:ts_weather/features/app_setting/domain/usecases/watching_connection.dart';
 import 'package:ts_weather/features/app_setting/presentation/blocs/app_settings_bloc.dart';
 
-// Repository Provider (giữ nguyên)
+// **Repository**
 final appSettingRepositoryProvider = Provider<AppSettingsRepository>((ref) {
   return AppSettingsRepositoryImpl(
     connectivity: ref.watch(connectivityProvider),
@@ -14,20 +14,16 @@ final appSettingRepositoryProvider = Provider<AppSettingsRepository>((ref) {
   );
 });
 
-// Provider cho UpdateTheme use case
+// **Use Case**
 final updateThemeProvider = Provider<UpdateTheme>((ref) {
   return UpdateTheme(ref.watch(appSettingRepositoryProvider));
 });
 
-// Provider cho WatchingConnection use case
 final watchingConnectionProvider = Provider<WatchingConnection>((ref) {
   return WatchingConnection(ref.watch(appSettingRepositoryProvider));
 });
 
-// Provider cho BLoC
-final appSettingBlocProvider = Provider<AppSettingsBloc>((ref) {
-  return AppSettingsBloc(
-    ref.watch(updateThemeProvider),
-    ref.watch(watchingConnectionProvider),
-  );
+// **Bloc**
+final appSettingBlocProvider = Provider.autoDispose<AppSettingsBloc>((ref) {
+  return AppSettingsBloc(ref.watch(updateThemeProvider), ref.watch(watchingConnectionProvider));
 });

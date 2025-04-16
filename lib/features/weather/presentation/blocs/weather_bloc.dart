@@ -7,7 +7,9 @@ import 'package:ts_weather/features/weather/domain/usecases/get_current_weather.
 import 'package:ts_weather/features/weather/domain/usecases/get_weather_forecast.dart';
 
 part 'weather_bloc.freezed.dart';
+
 part 'weather_event.dart';
+
 part 'weather_state.dart';
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {

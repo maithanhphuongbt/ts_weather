@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:ts_weather/core/extension/ts_color_style.dart';
+import 'package:ts_weather/core/extension/ts_color_style_ext.dart';
 
 const Color appWhite1 = Color(0xffF5F6F7);
 const Color appWhite2 = Color(0xFFE0E0E0);
@@ -21,10 +21,7 @@ const Color appGrey3 = Color(0xFFF5F5F5);
 const Color appRed1 = Color(0xFFE85959);
 
 class AppColor {
-
   static tsColor({required bool isDarkMode}) {
-	return TSColorTheme(
-	  currentWeatherBackground: isDarkMode ? appBlack5 : appGrey3,
-	);
+    return TSColorTheme(currentWeatherBackground: isDarkMode ? appBlack5 : appGrey3);
   }
 }

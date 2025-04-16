@@ -9,6 +9,6 @@ class WatchingConnection {
   WatchingConnection(this.repository);
 
   Stream<Either<AppException, AppSettingsEntity>> execute() {
-	return repository.watchSettings();
+    return repository.watchSettings();
   }
 }

@@ -12,11 +12,10 @@ abstract class WeatherRemoteDataSource {
   @GET('/weather')
   Future<WeatherModel> getCurrentWeather(
     @Query('lat') double lat,
-    @Query('lon') double lon,{
-      @Query('units') String units = "metric",
-      @Query('appid') String appId = AppKey.openWeatherApiKey,
-    }
-  );
+    @Query('lon') double lon, {
+    @Query('units') String units = "metric",
+    @Query('appid') String appId = AppKey.openWeatherApiKey,
+  });
 
   @GET('/forecast')
   Future<ForecastModel> getWeatherForecast(

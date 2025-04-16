@@ -8,8 +8,7 @@ class GetCurrentWeather {
 
   GetCurrentWeather(this.repository);
 
-  Future<Either<AppException, WeatherEntity>> execute(
-	{double? lat, double? lon}) async {
-	return await repository.getCurrentWeather(lat: lat, lon: lon);
+  Future<Either<AppException, WeatherEntity>> execute({double? lat, double? lon}) async {
+    return await repository.getCurrentWeather(lat: lat, lon: lon);
   }
 }
